@@ -25,6 +25,7 @@ export class MainPageComponent  {
         name: 'Vegeta',
         power: 7500
     }
+    
 ];
   
 }
