@@ -28,9 +28,13 @@ export class MainPageComponent  {
     
 ];
 
-onNewCharacter(character: Character): void {
-    console.log('Main-Page');
-    console.log(character);
-}
+    onNewCharacterPadre(character: Character): void {
+        this.characters.push(character);
+    }
+
+
+    onDeleteCharacterPadre( index: number ):void{
+        this.characters.splice(index, 1);
+       }
   
 }

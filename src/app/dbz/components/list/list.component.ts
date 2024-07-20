@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Character } from '../../interfaces/character.interface';
 
 @Component({
@@ -17,5 +17,18 @@ export class ListComponent {
   public characterList: Character[] = [{
     name: 'Trunks',
     power: 10
-  }]
- }
+  }];
+
+  // Evento que emite el indice 
+  //onDelete = Index value: number
+@Output()
+public onDeleteHijo: EventEmitter<number> = new EventEmitter()
+
+  onDeleteCharacter(index: number): void{
+    //TODO: Emitir el ID del personaje
+    console.log({ index });
+    this.onDeleteHijo.emit(index)
+  }
+
+
+}
