@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { isEmpty } from 'rxjs';
 
 @Component({
   selector: 'app-heroes-list',
@@ -10,5 +11,10 @@ import { Component } from '@angular/core';
 })
 export class ListComponent {
 public heroNames: string[] = ['Spiderman', 'Ironman', 'Hulk', 'She Hulk', 'Thor'];
-
+public deletedHero?:string = '';
+removeLastHero(): void{
+  if (this.heroNames.length !== 0 ){
+    this.deletedHero = this.heroNames.pop();
+  }
+}
 }
