@@ -3,13 +3,16 @@
 
 <div class="row">
     <div class="col">
-        <!--Input-->
-        <app-dbz-list [characterList]="dbzService.characters" (onDeleteHijo)="dbzService.deleteCharacterById($event)"></app-dbz-list>
+        <!--Input - Output-->
+        <app-dbz-list
+         [characterList]="characters"
+         (onDeleteHijo)="onDeleteCharacter($event)"
+         ></app-dbz-list>
     </div>
 
     <div class="col">
             <!--Output-->
-             <app-add-character (onNewCharacterHijo)="dbzService.onNewCharacterPadre($event)"></app-add-character>
+             <app-add-character (onNewCharacterHijo)="onNewCharacter($event)"></app-add-character>
     </div>
 
 </div>
