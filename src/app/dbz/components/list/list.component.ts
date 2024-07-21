@@ -22,13 +22,20 @@ export class ListComponent {
   // Evento que emite el indice 
   //onDelete = Index value: number
 @Output()
-public onDeleteHijo: EventEmitter<number> = new EventEmitter()
+//public onDeleteHijo: EventEmitter<number> = new EventEmitter()
 
-  onDeleteCharacter(index: number): void{
+public onDeleteHijo: EventEmitter<string> = new EventEmitter()
+
+/*   onDeleteCharacter(index: number): void{
     //TODO: Emitir el ID del personaje
     console.log({ index });
     this.onDeleteHijo.emit(index)
   }
+*/
 
-
+onDeleteCharacter(id?: string): void{
+    if (!id) return
+    this.onDeleteHijo.emit(id)
+  }
+ 
 }
